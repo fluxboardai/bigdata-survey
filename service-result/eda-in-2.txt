@@ -1,0 +1,8 @@
+INSIGHT 2: Survival Rates by Passenger Class
+
+Class 1 Survival Rate: 62.96%
+Class 2 Survival Rate: 47.28%
+Class 3 Survival Rate: 24.24%
+
+Analysis: 
+There is a clear correlation between passenger class and survival rate. First-class passengers had a significantly higher survival rate than third-class passengers, approximately 2.6 times higher. This suggests that socioeconomic status played a role in who survived the disaster, possibly due to factors like cabin location, access to lifeboats, and priority given to higher-class passengers.

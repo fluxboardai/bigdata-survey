@@ -1,0 +1,7 @@
+INSIGHT 1: Survival Rates by Gender
+
+Female Survival Rate: 74.20%
+Male Survival Rate: 18.89%
+
+Analysis: 
+There is a significant difference in survival rates between genders. Females had a much higher chance of survival than males, with females being 3.9 times more likely to survive. This aligns with the 'women and children first' protocol followed during the Titanic disaster.
