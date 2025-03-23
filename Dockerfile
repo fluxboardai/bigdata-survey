@@ -5,8 +5,7 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
-    python3-venv \
-    && rm -rf /var/lib/apt/lists/*
+    python3-venv
 
 # Create the directory inside the container
 RUN mkdir -p /home/doc-bd-a1
@@ -35,4 +34,4 @@ ENV PATH="/home/doc-bd-a1/.venv/bin:$PATH"
 RUN pip3 install -r requirements.txt
 
 # Open bash upon startup
-CMD ["/bin/bash"] 
+CMD ["tail", "-f", "/dev/null"] 

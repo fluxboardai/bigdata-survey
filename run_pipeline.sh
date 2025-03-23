@@ -7,7 +7,7 @@ echo "Executing pipeline inside the container..."
 cd /home/doc-bd-a1
 
 # Activate the Python virtual environment
-source venv/bin/activate
+source .venv/bin/activate
 
 echo "Python virtual environment activated."
 echo "Running data analysis pipeline..."

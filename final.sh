@@ -6,7 +6,7 @@ echo "This script will connect to the Docker container, run the pipeline, and co
 
 # Name of the Docker container and image
 CONTAINER_NAME="titanic-container"
-IMAGE_NAME="titanic-analysis"
+IMAGE_NAME="zanzofily/titanic-analysis"
 
 # Ensure service-result directory exists locally
 mkdir -p service-result
@@ -27,7 +27,7 @@ else
         docker start "$CONTAINER_NAME"
     else
         echo "Creating and starting new container '$CONTAINER_NAME'..."
-        docker run -d --name "$CONTAINER_NAME" -v "$(pwd)/service-result:/bd-a1/service-result" titanic-analysis
+        docker run -d --name "$CONTAINER_NAME" -v "$(pwd)/service-result:/home/service-result" "$IMAGE_NAME"
     fi
 fi
 
@@ -45,13 +45,13 @@ fi
 echo "Copying output files from container to local service-result directory..."
 
 # Copy output files from container to local machine
-docker exec $CONTAINER_NAME bash -c 'mkdir -p /bd-a1/service-result && cp /home/doc-bd-a1/res_dpre.csv /home/doc-bd-a1/eda-in-*.txt /home/doc-bd-a1/vis.png /home/doc-bd-a1/k.txt /bd-a1/service-result/'
+docker exec $CONTAINER_NAME bash -c 'mkdir -p /home/service-result && cp /home/doc-bd-a1/res_dpre.csv /home/doc-bd-a1/eda-in-*.txt /home/doc-bd-a1/vis.png /home/doc-bd-a1/k.txt /home/service-result/'
 
-echo "Files should now be available in your local bd-a1/service-result/ directory."
+echo "Files should now be available in your local service-result/ directory."
 
 # Stop the container
 echo "Stopping Docker container '$CONTAINER_NAME'..."
 docker stop $CONTAINER_NAME
 echo "Container stopped."
 
-echo "final.sh script execution completed." 
+echo "final.sh script execution completed."
